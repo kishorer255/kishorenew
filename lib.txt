@@ -1,3 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+</head>
+<body>
+<script>
+function Book(title, author, yearPublished, readStatus) {
+this.title = title;
+this.author = author;
+this.yearPublished = yearPublished;
+this.readStatus = readStatus;
+this.getSummary = function() {
+return this.title + " by " + this.author + ", published in " +
+this.yearPublished + ", read status: " + this.readStatus;
+};
+}
+this.toggleReadStatus = function() {
+this.readStatus = !this.readStatus;
+};
+var library= [];{
+function addBook(book){
+library.push(book);
+}
+function removelastBook(){
+library.pop();
+}
+function addBookTofront(book){
+library.unshift(book);
+}
+function removefirstBook(){
+library.shift();
+}
+function getAllTitles() {
+return library.map(function(book) {
+return book.title;
+});
+}function getBooksByAuthor(author) {
+return library.filter(function(book) {
 return book.author === author;
 });
 }
