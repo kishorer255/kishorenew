@@ -1,0 +1,43 @@
+return book.author === author;
+});
+}
+function getTotalBooksPublishedBefore(year) {
+return library.filter(function(book) {
+return book.yearPublished < year;
+}).reduce(function(count, book) {
+return count + 1;
+}, 0);
+}
+function removeBookByTitle(title) {
+var index = library.findIndex(function(book) {
+return book.title === title;
+});
+if (index !== -1) {
+library.splice(index, 1);
+}
+}
+function getBooksByReadStatus(status) {
+return library.filter(function(book) {
+return book.readStatus === status;
+});
+}
+function getSubLibrary(start, end) {
+return library.slice(start, end);
+}
+var book1 = new Book("Harry potter", "J k Rowling", 1925, false);
+var book2 = new Book("Home alone", "Macaulay Culkin", 2006, true);
+var book3 = new Book("Dr dolittle", "Hugh Lofting", 1949, false);
+addBook(book1);
+addBook(book2);
+addBook(book3);
+console.table(book1);
+console.log(book2);
+console.log(book3);
+console.log(getAllTitles());
+console.log(getTotalBooksPublishedBefore(1950));
+removeBookByTitle("Dr dolittle");
+console.log(getAllTitles());
+}
+</script>
+</body>
+</html>
