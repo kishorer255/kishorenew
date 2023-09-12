@@ -1,0 +1,103 @@
+<script>
+    class Book{
+    constructor(title,author,YearPublished,readStatus){
+    this.title=title;
+    this.author=author;
+    this.YearPublished=YearPublished;
+    this.readStatus=readStatus;
+    }
+    getSummary(){
+    return `${this.title} by ${this.author} published in
+    
+    ${this.YearPublished}. ${tjis.readStatus}`;
+    }
+    toggleReadStatus(){
+    if(this.readStatus=="read")
+    this.readStstus="unread";
+    else
+    this.readStatus="read";
+    }
+    
+    }
+    const library=[];
+    function addBook(book){
+    library.push(book);
+    }
+    function removeLastBook(){
+    library.pop();
+    }
+    function addBookToFront(book){
+    library.unshift(book);
+    }
+    function removeLastBook(){
+    library.shift();
+    }
+    function getAllTitles(){
+        return library.map((book)=>book.title);
+}
+function getBooksByAuthor(author){
+return library.filter((book)=>book.author===author);
+}
+function getTotalBooksPublishedBefore(year){
+return library.filter((book=>book.yearPublished <
+
+year).reduce((count)=>count+1,0));
+}
+function removeBookByTitle(title){
+const index=library.findIndex((book)=>book.title==title);
+if(index!==1)
+library. splice(index,1);
+}
+function getBooksByReadStatus(status){
+return library.filter((book)=>book.readStatus==readStatus);
+}
+function getSubLibrary(start, end){
+return library.aplice(start,end);
+}
+while(true){
+const action = prompt("What would you like to do?
+(add,remove,search,quit)");
+if(action === "add"){
+const title = prompt("Enter the title of the book");
+const author = prompt("Enter the author of the book:");
+const yearPublished = prompt("Enter the year the book was
+published:");
+const readStatus = prompt("Enter the read status of the book (read or
+unread):");
+const book = new Book(title, author, yearPublished, readStatus);
+addBook(book);
+alert("Book added to library.");
+} else if (action === "remove") {
+const title = prompt("Enter the title of the book to remove:");
+const books = removeBookByTitle(title);
+alert("Book removed from library.");
+} else if (action === "search") {
+const searchType = prompt("Enter the type of search (author, title,
+read status):");
+if (searchType === "author") {
+    const author = prompt("Enter the author to search for:");
+    const books = getBooksByAuthor(author);
+    alert("Yhe author is...")
+    } else if (searchType === "title") {
+    const title = prompt("Enter the title to search for:");
+    library.filter((book) => book.title === title);
+    alert("Ur title is");
+    } else if (searchType === "read status") {
+    const status = prompt("Enter the read status to search for (read or
+    unread):");
+    const books = getBooksByReadStatus(status);
+    alert("Thank u for ur search");
+    }
+    let results = "Search results:\n";
+    for (const book of books) {
+    results += book.getSummary() + "\n";
+    }
+    alert(results);
+    } else if (action === "quit") {
+    break;
+    } else {
+    alert("Invalid action.");
+    }
+    }
+    
+    </script>
