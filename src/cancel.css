@@ -1,0 +1,16 @@
+.cancel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #3e5b78;
+}
+
+.cancel h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.cancel p {
+    font-size: 16px;
+}

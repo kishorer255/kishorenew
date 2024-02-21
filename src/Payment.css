@@ -1,0 +1,15 @@
+body{
+  padding: 15px;
+  body {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    background-image: url('images/ii.jpg');
+    background-repeat:no-repeat;
+    background-size: cover;
+  }
+}
+.title {
+	color: #910f0f;
+  
+}
